@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel with Pop-up and Loader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel-container">
+        <button class="arrow-button left" onclick="scrollCarousel(-1)">&#9664;</button>
+        <div class="carousel">
+            <img class="carousel-image" src="path/to/data-tracking-default.jpg" data-hover="path/to/data-tracking-hover.jpg" data-id="data-tracking" onclick="openPopup(this)" alt="Data Tracking">
+            <img class="carousel-image" src="path/to/screens-default.jpg" data-hover="path/to/screens-hover.jpg" data-id="screens" onclick="openPopup(this)" alt="Screens">
+            <img class="carousel-image" src="path/to/dashboards-default.jpg" data-hover="path/to/dashboards-hover.jpg" data-id="dashboards" onclick="openPopup(this)" alt="Dashboards">
+            <img class="carousel-image" src="path/to/games-default.jpg" data-hover="path/to/games-hover.jpg" data-id="games" onclick="openPopup(this)" alt="Games">
+            <img class="carousel-image" src="path/to/analytics-default.jpg" data-hover="path/to/analytics-hover.jpg" data-id="analytics" onclick="openPopup(this)" alt="Analytics">
+            <img class="carousel-image" src="path/to/awards-default.jpg" data-hover="path/to/awards-hover.jpg" data-id="awards" onclick="openPopup(this)" alt="Awards">
+        </div>
+        <button class="arrow-button right" onclick="scrollCarousel(1)">&#9654;</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="loader" id="loader"></div>
+        <img id="popup-img" src="" alt="Popup Image" onload="hideLoader()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
